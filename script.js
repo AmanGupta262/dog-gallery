@@ -1,10 +1,9 @@
-/// <reference path="../jquery-3.5.1.js" />
+/// <reference path="../jquery-3.5.1.js" /
 var breeds;
-$.get('https://dog.ceo/api/breeds/list/all', function (data) {
-    breeds = data.message;
-});
-
 $('document').ready(function () {
+    $.get('https://dog.ceo/api/breeds/list/all', function (data) {
+        breeds = data.message;
+    });
     var keys = Object.keys(breeds);
     keys.forEach(e => {
         $('#breeds').append(`<option value="${e}">${e}</option>`)
